@@ -1,1 +1,30 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --bacground-image-main: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+  --main-font-family: Inter-Variable, Arial, sans-serif;
+  --accent-font-family: PressStart2P, Helvetica, sans-serif;
+  --main-font-weight-title: 700;
+  --main-font-weight-text: 400;
+  --header-inline-size: clamp(375px, 80%, 700px);
+  --main-color: #000;
+  --color-text-button-default: #fff;
+  --text-stroke-color: #fff;
+  --border-color: #000;
+  --background-color-main: #fff;
+  --contour-color: #000;
+  --animation-fill-color: #ff0000;
+}
