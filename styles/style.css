@@ -19,7 +19,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wdth" var(--main-font-weight-text);
+  font-variation-settings: "wght" var(--main-font-weight-text);
 }
 
 .header {
@@ -283,11 +283,6 @@
   stroke: var(--color-text-button-default, #fff);
   fill: var(--color-text-button-default, #fff);
   mix-blend-mode: difference;
-}
-
-.floppy__dialog {
-  inline-size: 39px;
-  block-size: 39px;
 }
 
 .button__text-close {
