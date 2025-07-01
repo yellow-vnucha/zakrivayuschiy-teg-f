@@ -15,7 +15,7 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
-  --main-font-family: Inter-Variable, Arial, sans-serif;
+  --main-font-family: 'Inter-Variable', Arial, sans-serif;
   --accent-font-family: PressStart2P, Helvetica, sans-serif;
   --main-font-weight-title: 700;
   --main-font-weight-text: 400;

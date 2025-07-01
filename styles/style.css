@@ -12,7 +12,7 @@
 
 .page {
   padding-block-start: 100px;
-  font-family: var(--main-font-family, Arial, sans-serif);
+  font-family: var(--main-font-family, Arial), sans-serif;
   background-color: var(--background-color-main, #fff);
   background-image: var(--bacground-image-main);
   background-size: cover;
@@ -20,6 +20,12 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--main-font-weight-text);
+}
+
+@support (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font-family, Arial), sans-serif;
+  }
 }
 
 .header {
@@ -60,10 +66,7 @@
 
 .main__content {
   margin-inline: auto;
-  inline-size: clamp(375px, 80%, 696px);
-}
-
-.main__content-list {
+  inline-size: clamp(375px, 80%, 700px);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -79,23 +82,29 @@
 }
 
 .card-title {
-  justify-self: start;
   align-self: center;
-  padding: 8px 8px 7px 8px;
+  padding-top: 7px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
   vertical-align: middle;
-  font-weight: var(--main-font-weight-title);
+  font-variation-settings: "wght" var(--main-font-weight-title);
   font-size: 18px;
   line-height: 100%;
+  display: block;
+  border-bottom: 2px solid var(--border-color, #000);
 }
 
 .card__image-and-label {
   position: relative;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
 }
 
 .card-label {
   position: absolute;
+  display: block;
   top: 25px;
   right: 25px;
   font-family: var(--accent-font-family), Helvetica, sans-serif;
@@ -114,17 +123,15 @@
     text-shadow: none;
     -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
     text-stroke: 1px var(--text-stroke-color, #fff);
-    mix-blend-mode: hard-light;
   }
 }
 
 .card-image {
   width: 100%;
   height: 100%;
-  border-top: 2px solid var(--border-color, #000);
-  border-bottom: 2px solid var(--border-color, #000);
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
 .card-text {
@@ -136,6 +143,7 @@
   font-weight: var(--main-font-weight-text);
   font-size: 18px;
   line-height: 116.66%;
+  border-top: 2px solid var(--border-color, #000);
 }
 
 .card-like {
@@ -169,10 +177,9 @@
   width: 100%;
   height: 100%;
   background-color: var(--main-color, #000);
-  transition: transform 0.5s ease-in-out, z-index 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
-  z-index: -1;
 }
 
 .button:hover::before {
@@ -227,10 +234,6 @@
   block-size: 36px;
 }
 
-.main__content-list-item:last-child {
-  margin-bottom: 50px;
-}
-
 .button-save {
   display: flex;
   flex-direction: row;
@@ -252,7 +255,6 @@
   justify-content: center;
   align-items: center;
   column-gap: 20px;
-  margin: auto;
   padding: 30px;
   inline-size: 353px;
   min-block-size: 191px;
@@ -280,9 +282,11 @@
   height: 21px;
   position: relative;
   z-index: 2;
-  stroke: var(--color-text-button-default, #fff);
-  fill: var(--color-text-button-default, #fff);
   mix-blend-mode: difference;
+}
+
+use.floppy__save-fill {
+  fill: #fff;
 }
 
 .button__text-close {
@@ -393,12 +397,25 @@
 }
 
 @media (width <= 375px) {
-  .page {
-    padding-inline: 0;
+  .card-title {
+    padding-top: 5px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 124%;
   }
 
   .card-text {
     padding: 25px;
+  }
+
+  .card-label {
+    top: 23px;
+    right: 13px;
+  }
+
+  .card-image {
+    max-height: 371px;
   }
 
   .button-save {
@@ -414,7 +431,22 @@
     block-size: 28px;
   }
 
+  .floppy__dialog {
+    inline-size: 39px;
+    block-size: 39px;
+  }
+
   .dialog[open] {
-    max-inline-size: 341px;
+    padding: 30px 40px;
+    max-inline-size: 342px;
+  }
+
+  .button_close {
+    padding: 12.5px 114.5px;
+    inline-size: 257px;
+  }
+
+  .dialog[open] {
+    row-gap: 5px;
   }
 }
