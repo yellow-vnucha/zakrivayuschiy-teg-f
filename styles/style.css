@@ -22,12 +22,6 @@
   font-variation-settings: "wght" var(--main-font-weight-text);
 }
 
-@support (font-variation-settings: normal) {
-  .page {
-    font-family: var(--main-font-family, Arial), sans-serif;
-  }
-}
-
 .header {
   display: flex;
   flex-direction: column;
@@ -242,9 +236,9 @@
   column-gap: 8px;
   margin: 0 auto;
   margin-block-end: 100px;
-  padding: 10px 21px 10px 15px;
+  padding: 15px 20px 15px 19px;
   background-color: var(--background-color-main, #fff);
-  inline-size: 335px;
+  inline-size: 339px;
   min-block-size: 51px;
 }
 
